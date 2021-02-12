@@ -1,0 +1,75 @@
+$size: 40vw;
+
+.main {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  margin-left: -50px;
+  padding-left: 50px;
+  width: calc(100% + 100px);
+  height: calc(#{$size} + 30px);
+  overflow: hidden;
+  perspective: 5000px;
+}
+
+.slide {
+  width: $size;
+  padding: 15px 0;
+  flex-shrink: 0;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.87, 0, 0.13, 1);
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &:last-of-type {
+    img {
+      filter: blur(5px);
+    }
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    transition: transform 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 15px;
+  margin-top: -40px;
+}
+
+.counter {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 55px;
+  color: #3d5a80;
+}
+
+.button {
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  margin-left: 5px;
+  color: #98c1d9;
+  transition: color 400ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: #3d5a80;
+  }
+}
